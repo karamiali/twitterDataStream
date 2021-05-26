@@ -4,7 +4,7 @@ topic_name = "twitterdata"
 
 consumer = KafkaConsumer(
     topic_name,
-    bootstrap_servers=['192.168.1.21:9092', '192.168.1.21:9093'],
+    bootstrap_servers=['raspberrypi:9092'],
     auto_offset_reset='latest',
     enable_auto_commit=True,
     auto_commit_interval_ms=5000,
