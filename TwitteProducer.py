@@ -1,10 +1,10 @@
 from tweepy.streaming import StreamListener
 from tweepy import Stream
 from kafka import KafkaProducer
-import authentifcation
-import conf
+import Authentifcation
+import Conf
 
-producer = KafkaProducer(bootstrap_servers=conf.zk_url)
+producer = KafkaProducer(bootstrap_servers=Conf.zk_url)
 
 topic_name = "twitterdata"
 track_words = ['kardashian']
@@ -21,7 +21,7 @@ class produceListener(StreamListener):
 
 
 if __name__ == "__main__":
-    auth = authentifcation.getTwitterAuth()
+    auth = Authentifcation.getTwitterAuth()
     listener = produceListener()
     stream = Stream(auth, listener)
-    stream.filter(track=conf.track_workds, languages=["fr"])
+    stream.filter(track=Conf.track_workds, languages=["fr"])
