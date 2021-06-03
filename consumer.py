@@ -1,10 +1,11 @@
 from kafka import KafkaConsumer
+import conf
 
 topic_name = "twitterdata"
 
 consumer = KafkaConsumer(
     topic_name,
-    bootstrap_servers=['raspberrypi:9092'],
+    bootstrap_servers=[conf.zk_url],
     auto_offset_reset='latest',
     enable_auto_commit=True,
     auto_commit_interval_ms=5000,
