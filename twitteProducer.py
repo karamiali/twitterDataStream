@@ -24,4 +24,4 @@ if __name__ == "__main__":
     auth = authentifcation.getTwitterAuth()
     listener = produceListener()
     stream = Stream(auth, listener)
-    stream.filter(track=conf.track_workds)
+    stream.filter(track=conf.track_workds, languages=["fr"])
